@@ -73,8 +73,8 @@ public:
     void                setLoopIn(uint64_t loopIn);
     void                setLoopOut(uint64_t loopOut);
     void                setPlayDirection(bool direction);
-    void                seekToPos(double pos);
-    void                seekToFrame(int64_t frame);
+    void                seekToPos(double pos, bool sync = true);
+    void                seekToFrame(int64_t frame, bool sync = true);
     
     void                setDoubleBuffered(bool bDoubleBuffer);
      
@@ -88,6 +88,7 @@ public:
     std::string         getFileSummary();
     
     void                draw(float x, float y, float width, float height);
+    void                drawSubsection(float x, float y, float w, float h, float sx, float sy, float sw, float sh);
 
 private:
     ofShader            m_shader;
